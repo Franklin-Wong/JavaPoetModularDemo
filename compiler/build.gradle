@@ -1,0 +1,18 @@
+apply plugin: 'java-library'
+
+//这个版本兼容到 3.4  ~ 4.0
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    //这个lib作为背后的服务 能够监听你是否还在编译中
+    // AS3.4.1 + Gradle 5.1.1 + auto-service:1.0-rc4
+    compileOnly'com.google.auto.service:auto-service:1.0-rc4'
+    annotationProcessor'com.google.auto.service:auto-service:1.0-rc4'
+
+    // 帮助我们通过类调用的形式来生成Java代码 [JavaPoet]
+    implementation "com.squareup:javapoet:1.9.0"
+    //依赖注解
+    implementation project(":arouter-annotation")
+}
+
+sourceCompatibility = "7"
+targetCompatibility = "7"

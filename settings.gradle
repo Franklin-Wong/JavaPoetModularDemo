@@ -1,0 +1,5 @@
+include ':arouter_api'
+rootProject.name='JavaPoetModularDemo'
+include ':app'
+include ':arouter-annotation'
+include ':compiler'
